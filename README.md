@@ -1,4 +1,4 @@
-# EL CAP files
+# EL CAP files (Internship project)
 
 Adding the files I worked on. Not the entire project.
 
