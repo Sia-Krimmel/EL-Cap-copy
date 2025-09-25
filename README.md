@@ -1,30 +1,10 @@
-# Project Title
+# EL CAP files
 
-Short project description. What the project is and why it exists.
-
-## Table of Contents
-
-- [About](#about)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Development](#development)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
+Adding the files I worked on. Not the entire project.
 
 ## About
 
-Explain the project's purpose, goals, and a brief high-level description.
-
-## Requirements
-
-List required OS, runtimes, or external tools (e.g., Node.js >= 18, Python >= 3.10).
-
-## Installation
-
-Choose the section relevant to your project and follow the steps.
+Website for a venture firm.
 
 ### Node.js / JavaScript
 
