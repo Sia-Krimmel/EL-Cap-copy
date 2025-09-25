@@ -1,0 +1,11 @@
+.container {
+  padding: var(--page-gutters-desktop);
+  max-width: var(--page-width);
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: var(--page-gutters-mobile);
+    margin: var(--page-margins-mobile);
+  }
+}

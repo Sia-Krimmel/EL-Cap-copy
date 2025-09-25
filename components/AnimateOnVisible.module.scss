@@ -1,0 +1,42 @@
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBackground {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: var(--theme-background);
+  }
+}
+
+.content {
+  opacity: 0;
+  transform: translateY(20%);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes BackgroundFadeIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: var(--theme-background);
+  }
+}
+.fadeInBackground {
+  animation: fadeInBackground 5s ease forwards;
+}

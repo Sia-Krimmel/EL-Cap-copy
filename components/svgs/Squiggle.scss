@@ -1,0 +1,15 @@
+@keyframes Animated {
+  from {
+    stroke-dashoffset: 100;
+    opacity: 75%;
+    visibility: hidden;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 100%;
+    visibility: 1;
+  }
+}
+.path {
+  animation: Animated 5s linear forwards;
+}

@@ -1,0 +1,107 @@
+.container {
+  border: 1px solid;
+  padding: 24px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.activeLink {
+  cursor: pointer;
+}
+
+.activeLink:hover {
+  transition: 200ms ease background-color;
+  background: var(--theme-color-hover-on-dark);
+}
+
+.activeLink:hover .animatedUnderline span::after {
+  width: 100%;
+  left: 0;
+  background: currentColor;
+}
+
+.animatedUnderline {
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+  width: fit-content;
+}
+
+.animatedUnderline span {
+  display: inline-block;
+}
+
+.animatedUnderline span::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  display: block;
+  margin-top: 2px;
+  left: 0;
+  transition: width 0.2s ease;
+  -webkit-transition: width 0.2s ease;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.authorsRow {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.label {
+  font-size: var(--type-scale-fixed-small);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  @media (max-width: 1300px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.title {
+  padding-bottom: 16px;
+  height: 84px;
+  font-size: 18px;
+
+  @media (max-width: 1300px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.callToAction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .authorWithLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.arrow {
+  top: 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}

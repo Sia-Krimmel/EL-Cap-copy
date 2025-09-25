@@ -1,0 +1,12 @@
+.page {
+  padding-bottom: 460px;
+  position: relative;
+  min-height: 100dvh;
+
+  @media (max-width: 768px) {
+    padding-bottom: 400px;
+  }
+}
+
+.content {
+}

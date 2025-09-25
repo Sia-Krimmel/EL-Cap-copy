@@ -1,0 +1,162 @@
+$body-theme-multicolors: (
+  --background-black: #000000,
+  --background-blue: #bbdbe2,
+  --background-yellow: #d1c28f,
+  --background-red: #d1251a,
+  --background-purple: #280322,
+  --background-green: #1a4300,
+);
+$theme-colors: (
+  #bbdbe2: (
+    font: #2c1800,
+    arrow: #2c1800,
+  ),
+  #d1c28f: (
+    font: #000000,
+    arrow: #000000,
+  ),
+  #d1251a: (
+    font: #ffffff,
+    arrow: #ffffff,
+  ),
+  #280322: (
+    font: #ff008a,
+    arrow: #ff008a,
+  ),
+  #1a4300: (
+    font: #61ff00,
+    arrow: #61ff00,
+  ),
+);
+
+$container-colors: #bbdbe2, #d1c28f, #d1251a, #280322, #1a4300, #bbdbe2, #d1c28f, #d1251a, #280322, #1a4300, #bbdbe2, #d1c28f, #d1251a, #280322, #1a4300;
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+$animation-delay: 300ms;
+.articleContainer {
+  overflow: hidden;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  visibility: hidden;
+
+  @for $i from 1 through length($container-colors) {
+    &:nth-of-type(#{$i}) {
+      $bg-color: nth($container-colors, $i);
+      $font-color: map-get(map-get($theme-colors, $bg-color), font);
+      background-color: $bg-color;
+      --font-color: #{$font-color};
+      color: map-get(map-get($theme-colors, $bg-color), font);
+      animation: slideIn 1s ease forwards;
+      animation-delay: ($animation-delay * $i);
+    }
+  }
+  &:hover .animatedUnderline span::after {
+    width: 100%;
+  }
+}
+
+.linkWrapper {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.slideIn {
+  animation: slideIn 2s ease forwards;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+.description {
+  font-family: 'SF Pro Display Light';
+  font-size: 16px;
+
+  @media (max-width: 768px) {
+    margin-right: 0px;
+  }
+}
+
+.name {
+  font-size: 40px;
+  font-family: 'SF Pro Display Light';
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    margin-right: 0px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 24px;
+  }
+}
+
+.titleContainer {
+  align-items: center;
+  display: flex;
+  // flex-direction: row;
+  gap: 8px;
+}
+
+.body {
+  background-color: var(--background-black);
+}
+.animatedUnderline {
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+  width: fit-content;
+
+  span {
+    display: inline-block;
+    position: relative;
+  }
+
+  span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 2px;
+    left: 0;
+    transition: width 0.2s ease;
+    -webkit-transition: width 0.2s ease;
+    background-color: var(--font-color);
+  }
+}
+
+.arrow {
+  text-decoration: none;
+  font-size: 40px;
+  font-family: 'SF Pro Display Light';
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    margin-right: 0px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 24px;
+  }
+}

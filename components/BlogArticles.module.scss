@@ -1,0 +1,138 @@
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+$animation-delay: 200ms;
+
+.container {
+  padding-top: 4px;
+  color: var(--theme-foreground-text);
+}
+
+.body {
+  background-color: var(--theme-background);
+}
+
+.h1 {
+  color: var(--theme-text-on-dark);
+}
+
+.link {
+  font-size: var(--type-scale-fixed-small);
+}
+
+.author {
+  font-size: var(--type-scale-fixed-small);
+  font-weight: 500;
+}
+
+.date {
+  font-size: var(--type-scale-fixed-small);
+  font-weight: 500;
+}
+
+.title {
+  font-size: var(--type-scale-fixed-xl);
+  font-weight: 400;
+  padding-bottom: 10px;
+  font-family: 'SF Pro Display Light';
+}
+
+.articleContainer {
+  cursor: pointer;
+  padding: 24px 0px;
+  border-bottom: 1px solid var(--theme-foreground-text);
+  transition: 200ms all ease-in;
+  visibility: hidden;
+  &:first-of-type {
+    border-top: 1px solid var(--theme-foreground-text);
+  }
+  @for $i from 1 through 100 {
+    &:nth-of-type(#{$i}) {
+      animation: slideIn 1s ease forwards;
+      animation-delay: ($animation-delay * $i);
+    }
+  }
+
+  &:hover .link,
+  &:hover .title,
+  &:hover .author,
+  &:hover .date,
+  &:hover .arrow {
+    color: var(--theme-link-hover-on-dark);
+    stroke: var(--theme-link-hover-on-dark);
+  }
+
+  &:hover .circle {
+    background-color: var(--theme-link-hover-on-dark);
+  }
+
+  &:hover .animatedUnderline span::after {
+    width: 100%;
+    left: 0;
+    background: var(--theme-link-hover-on-dark);
+  }
+}
+
+.articleDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.circle {
+  height: 4px;
+  width: 4px;
+  background-color: var(--theme-foreground-text);
+  border-radius: 24px;
+}
+
+.arrow {
+  width: 20px;
+  height: auto;
+  color: var(--theme-foreground-text);
+
+  @media (max-width: 768px) {
+    width: 24px;
+  }
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.animatedUnderline {
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+  width: fit-content;
+
+  span {
+    display: inline-block;
+  }
+
+  span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    display: block;
+    margin-top: 2px;
+    left: 0;
+    transition: width 0.2s ease;
+    -webkit-transition: width 0.2s ease;
+  }
+}

@@ -1,0 +1,17 @@
+@keyframes fade-in {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.body {
+  padding-top: 2rem;
+  animation: fade-in 1s linear;
+  border: none;
+}

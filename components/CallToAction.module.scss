@@ -1,0 +1,57 @@
+/* CallToAction.module.css */
+@keyframes arrowFadeIn {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(15px);
+  }
+}
+@keyframes borderUnderline {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.link {
+  color: currentColor;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.body {
+  color: var(--theme-foreground-text);
+  font-family: 'SF Pro Display Light';
+  font-size: var(--type-scale-fixed-xl);
+  position: relative;
+  cursor: pointer;
+  color: currentColor;
+}
+.link:hover .arrow {
+  animation: arrowFadeIn 1s ease-in-out infinite alternate;
+}
+
+.arrow {
+  color: var(--theme-foreground-text);
+}
+
+.underline {
+  position: relative;
+}
+
+.underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-bottom: solid 2px currentColor;
+  animation: borderUnderline 1.7s linear forwards;
+}

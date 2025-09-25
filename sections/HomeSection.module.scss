@@ -1,0 +1,216 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  min-height: 20vh;
+
+  @media (max-width: 768px) {
+    min-height: 40vh;
+  }
+}
+
+.container {
+  overflow: hidden;
+  max-height: 100vh;
+}
+
+.h2 {
+  color: #2c1800;
+  font-size: 72px;
+  font-weight: 550;
+  padding-bottom: 36px;
+  max-width: 30ch;
+  letter-spacing: 0.02em;
+  font-family: 'SF Pro Display Light';
+  -webkit-font-smoothing: antialiased;
+
+  @media (max-width: 1920px) {
+    font-size: 56px;
+  }
+
+  @media (max-width: 1050px) {
+    font-size: 64px;
+    padding-bottom: 40px;
+    max-width: 30ch;
+  }
+
+  @media (max-width: 883px) {
+    padding-bottom: 16px;
+    font-size: 45px;
+    padding-bottom: 16px;
+    max-width: 30ch;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 45px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: 440px) {
+    max-width: 20ch;
+    font-size: 32px;
+  }
+}
+
+.elcapLogo {
+  position: relative;
+  align-self: flex-end;
+  bottom: 0;
+  background: var(--color-text);
+  width: calc(100% + 10vw);
+  height: auto;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  border: none;
+  margin-left: -10vw;
+  margin-bottom: -8vh;
+  background: none;
+
+  @media (max-width: 1500px) {
+    margin-left: -10vw;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: -3vh;
+    padding-top: 25vh;
+  }
+
+  @media (max-width: 600px) {
+    padding-top: 180px;
+    padding-top: 30vh;
+  }
+
+  @media (max-height: 990px) {
+    display: none;
+  }
+
+  @media (min-width: 1900px) and (max-height: 1200px) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    margin-bottom: -40vh;
+  }
+
+  @media (min-width: 1900px) and (max-height: 1300px) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    margin-bottom: -25vh;
+  }
+
+  @media (min-width: 1500px) and (max-height: 950px) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    margin-bottom: -35vh;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 88px 0 88px;
+
+  @media (max-width: 400px) {
+    padding: 0;
+  }
+
+  @media (max-width: 1050px) {
+    padding-bottom: 100px;
+  }
+}
+
+.callToAction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.logoContainer {
+  margin-top: 100px;
+  position: absolute;
+  width: 100%;
+  bottom: -4px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+    position: absolute;
+    width: 100%;
+    bottom: 90px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 428px) {
+    margin-top: 100px;
+    position: absolute;
+    width: 100%;
+    bottom: 140px;
+    overflow: hidden;
+  }
+}
+
+.subtitle {
+  width: 20em;
+}
+
+.logoDesktop {
+  display: block;
+
+  @media (max-width: 540px) {
+    display: none;
+  }
+}
+
+.logoContainerMobile {
+  @media (max-width: 768px) {
+    position: relative;
+    height: 700px;
+  }
+}
+
+.logoMobile {
+  display: none;
+  position: relative;
+
+  @media (max-width: 540px) {
+    display: block;
+    bottom: 4rem;
+    position: absolute;
+    position: absolute;
+    right: 0rem;
+    top: -5rem;
+  }
+
+  @media (max-width: 480px) {
+    bottom: 10rem;
+  }
+
+  @media (max-width: 418px) {
+    top: -7rem;
+  }
+  .elcapLogoMobile {
+    overflow: hidden;
+    height: 100%;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .mobileSvg {
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: 400px) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

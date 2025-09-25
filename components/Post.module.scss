@@ -1,0 +1,32 @@
+.body {
+  color: var(--color-brown-dark);
+  width: 100%;
+  max-width: 768px;
+  padding: 24px 24px 128px 24px;
+  margin: 0 auto;
+
+  @media (max-width: 1050px) {
+    padding: var(--page-gutters-desktop);
+    max-width: var(--page-width);
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--page-gutters-mobile);
+  }
+
+  a {
+    color: var(--color-brown-dark);
+    transition: 200ms ease all;
+    cursor: pointer;
+
+    &:visited {
+      color: var(--color-primary);
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

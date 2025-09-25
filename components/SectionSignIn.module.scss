@@ -1,0 +1,36 @@
+.full {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.body {
+  max-width: 768px;
+  width: 100%;
+}
+
+.h1 {
+  font-size: 1.5rem;
+}
+
+.p {
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.5;
+  margin-top: 48px;
+  max-width: 568px;
+}
+
+.actions {
+  padding: 24px 24px 128px 24px;
+}
+
+.link {
+  color: var(--color-text);
+  transition: 200ms ease all;
+
+  &:visited {
+    color: var(--color-text);
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

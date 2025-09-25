@@ -1,0 +1,96 @@
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+$animation-delay: 600ms;
+
+.container {
+  z-index: var(--z-index-small);
+  position: relative;
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  padding-bottom: 32px;
+
+  @media (max-width: 1050px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .article {
+    opacity: 0;
+    animation: slideIn 1s ease forwards;
+
+    @for $i from 1 through 100 {
+      &:nth-of-type(#{$i}) {
+        $row: ceil($i / 4);
+        animation-delay: $animation-delay * ($row - 1);
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    row-gap: 0.5rem;
+  }
+}
+
+.pagination button {
+  width: 40px;
+  height: 40px;
+  padding: 5px 10px;
+  border: none;
+  background-color: var(--theme-background);
+  cursor: pointer;
+  color: var(--theme-text-on-dark);
+  border: 1px solid currentColor;
+  transition: 200ms ease-in-out background-color;
+
+  &:hover {
+    background: var(--color-green-light);
+    color: var(--color-green-dark);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.pagination .activePage {
+  font-weight: bold;
+  background-color: var(--color-green-light);
+  color: var(--color-green-dark);
+}
+
+.pagination button.disabled {
+  border: 1px solid var(--theme-button-disabled);
+  cursor: not-allowed;
+  color: var(--theme-button-disabled);
+}

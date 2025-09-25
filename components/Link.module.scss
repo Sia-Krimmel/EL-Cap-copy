@@ -1,0 +1,34 @@
+.animatedUnderline {
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+
+  span {
+    display: inline-block;
+  }
+
+  span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    display: block;
+    margin-top: 4px;
+    right: 0;
+    transition: width 0.2s ease;
+    -webkit-transition: width 0.2s ease;
+  }
+}
+
+.animatedUnderline.textOnLight {
+  &:hover span::after {
+    width: 100%;
+    left: 0;
+    background: var(--theme-link-hover);
+  }
+}
+
+.none {
+  text-decoration: none;
+  color: inherit;
+}

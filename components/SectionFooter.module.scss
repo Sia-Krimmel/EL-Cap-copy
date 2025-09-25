@@ -1,0 +1,158 @@
+.container {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  color: var(--theme-foreground-text);
+  position: absolute;
+  bottom: 0;
+}
+
+.mainContent {
+  position: relative;
+  overflow: hidden;
+}
+
+.mainContentGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 40px;
+  align-items: end;
+  height: 100%;
+  padding-bottom: 24px;
+}
+
+.logoContainer {
+  .logo {
+    grid-column: 1/6;
+    width: 75vw;
+    height: 308px;
+    position: absolute;
+    bottom: -60px;
+    color: var(--theme-foreground-text);
+
+    left: -19vw;
+
+    @media (max-width: 1920px) {
+      left: -28px;
+    }
+
+    @media (max-width: 1050px) {
+      width: 60vw;
+      grid-column: 1/5;
+      bottom: -120px;
+      height: 360px;
+    }
+
+    @media (max-width: 768px) {
+      left: 16px;
+      width: 40vw;
+      bottom: -164px;
+    }
+  }
+}
+
+.links {
+  grid-column: 7/8;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+
+  .link {
+    font-size: 16px;
+    text-wrap: nowrap;
+  }
+
+  @media (max-width: 1050px) {
+    grid-column: 6/7;
+  }
+}
+
+.copyright {
+  grid-column: 8/9;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-wrap: nowrap;
+
+  @media (max-width: 1050px) {
+    grid-column: 7/9;
+  }
+
+  @media (max-width: 768px) {
+    position: absolute;
+    bottom: 168px;
+  }
+}
+
+.tagline {
+  font-size: var(--type-scale-1);
+  font-family: 'SF Pro Display Light';
+  max-width: 16ch;
+  color: var(--theme-foreground-text);
+  padding-bottom: 128px;
+  max-width: 16ch;
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+    padding-bottom: 64px;
+  }
+}
+
+.navItem {
+  padding: 0 24px;
+  min-width: 64px;
+  white-space: nowrap;
+  position: relative;
+
+  @media (max-width: 768px) {
+    margin: var(--page-gutters-mobile);
+    padding: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &:hover .navItemSquiggle {
+    width: 150%;
+  }
+}
+
+.navItemSquiggle {
+  display: block;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out;
+
+  @media (max-width: 768px) {
+    left: -1.2rem;
+  }
+}
+
+.svgAboutItem {
+  padding-left: 1rem;
+  width: 55px;
+}
+
+.svgBlogItem {
+  padding-left: 1rem;
+  width: 40px;
+}
+
+.svgReadingListItem {
+  padding-left: 1rem;
+  width: 100px;
+}
+
+.svgContributorsItem {
+  padding-left: 1rem;
+  width: 100px;
+}
+
+.svgPortfolioItem {
+  padding-left: 1rem;
+}

@@ -1,0 +1,101 @@
+.body {
+  background-color: var(--theme-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.h2 {
+  color: var(--theme-foreground-text);
+  font-size: 56px;
+  font-weight: 550;
+  padding-bottom: 56px;
+  max-width: 38ch;
+  letter-spacing: 0.02em;
+  font-family: 'SF Pro Display Light';
+  -webkit-font-smoothing: antialiased;
+
+  @media (max-width: 1920px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    padding-bottom: 36px;
+  }
+}
+
+.p {
+  color: var(--theme-foreground-text);
+  letter-spacing: 0.02em;
+  max-width: 95ch;
+  font-family: 'SF Pro Display Light';
+  font-size: 24px;
+
+  @media (max-width: 1920px) {
+    font-size: var(--type-scale-fixed-large);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.callToAction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  color: var(--theme-foreground-text);
+}
+
+.heroImageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 88px;
+  padding-bottom: 56px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 0px;
+  }
+}
+
+.heroGrid {
+  color: var(--theme-foreground-text);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+
+  @media (max-width: 1920px) {
+    gap: 48px;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 48px;
+    width: 100%;
+    gap: 44px;
+  }
+}
+
+.thesisTextContainer {
+  color: var(--theme-foreground-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 128px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 96px;
+  }
+}
